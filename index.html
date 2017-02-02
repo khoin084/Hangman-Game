@@ -1,0 +1,65 @@
+<!--
+Developer:Khoi Nguyen
+Date: 1/29/2017
+UCSD Code Bootcamp: Homework #3
+-->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<!--Linking viewport, regular zoom 100% across various devices.-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Hangman Game </title>
+	<!--Linking bootstrap css to leverage classes for RWD-->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<!--Link after boostrap so that it does not overwrite my styles.-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!--Linking javascript-->
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+</head>
+<!--need to onload the entire page before performing any JS, i.e. wait for page to fully load.-->
+<body onload="loadingIsDone()">
+	<div class="container"  id="mastHead">
+		<div class="row text-center">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4" id="mainGameTitle">
+				<img src="assets/images/mainTitle.png" alt="Hangman" width="350">	
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>	
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-sm-6 text-center" id="leftBorder">
+				<img id="oldGame" src="assets/images/handheldHangman.png" alt="Hangman">
+				<p id="hangTime">*The Hanging will commence when 6 lives remain.</p>
+				<p id="stick"></p>
+			</div>
+			<div class="col-sm-6 text-center" id="rightBorder">
+				<!--Entire game display-->
+				<ul id="gameDisplay">
+					<li>
+						<label for="userPrompt" id="intro"> Press Any Key to get Started! </label> <br>
+						<label for="word"> Wins </label> <br>
+						<label for="word" id="winNum"></label> <br>
+						<label for="word" id="numWins"> </label> <br>
+						<label for="word"> Current Word </label> <br>
+						<h2 id="currentLetter">
+						</h2>
+						<label for="scoreKeeping"> Number of Lives Left</label> <br> 
+						<h2 id="lives"> </h2>
+						</h2>
+						<label > Letters Already Guessed </
+						label> <br>
+						<h2 id="noRepeat">
+						</h2>
+
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>
+

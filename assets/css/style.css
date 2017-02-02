@@ -1,0 +1,60 @@
+/**
+*Developer:Khoi Nguyen
+*Date: 1/29/2017
+*UCSD Code Bootcamp: Homework #3
+**/
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: fantasy;
+  font-size: 24px;
+  color: #7FFFD4;
+  line-height: 34px;
+  background: url("../images/dark_embroidery.png");
+}
+#mastHead {
+	margin-top: 20px;
+}
+#mainGameTitle {
+  -webkit-transition: width 2s, height 2s;
+  transition: width 2s, height 2s;
+}
+#mainGameTitle:hover {
+	margin-top: 100px;
+	width: 200px;
+	height: 200px;
+	transform: rotate(45deg);
+}
+#intro {
+	font-size: 35px;
+	margin-top: 40px;
+	margin-bottom: 60px;
+}
+#gameDisplay {
+  list-style-type: none;
+  text-align: center;
+}
+#leftBorder {
+	margin-top: 50px;
+	height: 700px;
+	border: 8px dashed white;
+}
+#rightBorder {
+	margin-top: 50px;
+	height: 700px;
+	border: 8px dashed white;
+}
+#oldGame {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#hangTime {
+	color: red;
+}
+#stick {
+	margin-top: 40px;
+}
+
+
+

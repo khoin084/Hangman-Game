@@ -3,10 +3,9 @@
 *Date: 1/29/2017
 *UCSD Code Bootcamp: Homework #3
 */
-
 //variable declarations
 var wordlist = ["Princess","supernintendo", "sega", "Nintendo", "gameboy","Mario","Bowser",
-"Princess", "Sonic", "Khoi", "Cplusplus", "java", "coffee"];
+"Princess", "Sonic", "Khoi", "Cplusplus", "java", "coffee", "car", "Bootcamp", "StackOverflow"];
 var rndmWord;
 var userGuess;
 var guessed = [];
@@ -30,10 +29,7 @@ function startDisplay() {
 	//display starting lives.
 	document.getElementById("lives").innerHTML = lives;
 }
-/*copyArr takes in one array paraemter and returns a copy of the array.
-*Objective is to make a copy of the guessed array
-*for later processing and filtering out repeated guesses.
-*/ 
+//copyArr takes in desired array as argument and returns a copy.
 function copyArr(inputArr) {
 	var temp = [];
 	for (var i =0; i < inputArr.length; i++) {
@@ -41,11 +37,7 @@ function copyArr(inputArr) {
 	}
 	return temp;
 }
-/*filterRepeat takes in two array params and returns a 
-*filtered array with no repeated chars.
-*Objective is to detect repeated chars. If repeated characters 
-*are found, splice it out with method splice()
-*/ 
+//take in two arr args and returns an array with no repeated chars.
 function filterRepeat(inputArr,filterArr) {
 	var counter = 0;
 	//nested for loop to compare two arrays.
@@ -67,9 +59,8 @@ function filterRepeat(inputArr,filterArr) {
 	}
 	return filterArr;
 }
-/*correctGuessed takes two array params and returns the number of wrong guesses
-*thus far.
-*/ 
+/*two arr args and delets indexes with correct gusses. Leaving only wrong guesses. 
+Returns the nubmer of wrong guesses.*/
 function numOfWrongGuesses(disArr, wrongArr) {
 	for (var i = 0; i < disArr.length; i++) {
 		for(var j = 0; j < wrongArr.length; j++) {
@@ -81,8 +72,7 @@ function numOfWrongGuesses(disArr, wrongArr) {
 	}
 	return wrongArr.length;
 }
-/*displays the stick figure hangman accorinding to reducing lives.
-access src image from assets folder and display to DOM.*/
+//displays the stick figure hangman to the DOM accorindingly with decrementing lives.
 function beginHanging(num) {
 	switch(num) {
     case 6:
@@ -140,7 +130,6 @@ function resetGame () {
 	}
 	lives = 13;						//resetting the lives
 }
-
 //function called after the page fully loads from HTML file.	
 function loadingIsDone() {
 	//screen setup for game.
@@ -173,16 +162,14 @@ function loadingIsDone() {
 			document.getElementById("currentLetter").innerHTML = displayArr.join(" "); 
 			document.getElementById("lives").innerHTML = lives;
 			document.getElementById("noRepeat").innerHTML = noRepeatGuessed.join(" ");
-		}
-			
+		}			
 		//make a copy of the user guessed array.
 		copyOfGuessed = copyArr(guessed);
 		//filter the user guessed array and rid of repeated characters.
 		noRepeatGuessed = filterRepeat(guessed, copyOfGuessed);
 		wrongGuesses = copyArr(noRepeatGuessed);
 		//numOfWrongGuesses function returns wrong guesses thus far.
-		lives = lives - numOfWrongGuesses(displayArr, wrongGuesses);
-		
+		lives = lives - numOfWrongGuesses(displayArr, wrongGuesses);	
 		//start displaying hanging stick figures. Also, trigger next round.
 		if(lives <= 7 && lives >= 0) {
 			beginHanging(lives);
@@ -201,8 +188,7 @@ function loadingIsDone() {
 			document.getElementById("lives").innerHTML = lives;
 			document.getElementById("noRepeat").innerHTML = noRepeatGuessed.join(" ");
 			alert("You Lose, press Any Key to Play Again.");
-		}	
-		
+		}			
 		//Redisplaying contents onto the screen.
 		document.getElementById("currentLetter").innerHTML = displayArr.join(" "); 
 		document.getElementById("lives").innerHTML = lives;
@@ -210,7 +196,6 @@ function loadingIsDone() {
 		for(var i = 0; i < noRepeatGuessed.length; i++) {
 			document.getElementById("noRepeat").innerHTML = noRepeatGuessed.join(" ");
 		}
-
 	};//end of event function
 }//end of inputConditioning()	
 
